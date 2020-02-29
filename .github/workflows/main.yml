@@ -1,0 +1,17 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build-linux:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: ghaction-cmake
+      uses: lpenz/ghaction-cmake@v0.1
+      with:
+        # Dependencies as Debian packages to install
+        dependencies: libsfml-dev
+
