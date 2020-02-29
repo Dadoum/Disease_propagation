@@ -25,6 +25,7 @@ ELSE()
         sfml-window
         sfml-graphics
     )
+  set(SFML_DIR "${CMAKE_SOURCE_DIR}/dependencies/SFML/lib/cmake/SFML" CACHE FILEPATH "The directory containing a CMake configuration file for SFML.")
 ENDIF()
 
 target_include_directories(Disease_propagation PRIVATE ${SFML_INCLUDE_DIR})
