@@ -9,9 +9,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: ghaction-cmake
-      uses: lpenz/ghaction-cmake@v0.1
-      with:
-        # Dependencies as Debian packages to install
-        dependencies: libsfml-dev
+    - name: Build
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y --no-install-recommends cmake pkg-config make gcc curl clang clang-tidy clang-format git valgrind util-linux libsfml-dev
+        cmake .
+        make
 
